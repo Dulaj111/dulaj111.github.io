@@ -23,9 +23,10 @@ export const projectsData = [
     title: "My Portfolio",
     category: "Web App",
     year: "2026",
-    description: "Me project eka gana short introduction ekak.",
+    description: "Personal portfolio website highlighting creative web development.still continue...",
     techStack: ["React", "Vite", "Tailwind CSS"],
     githubUrl: "https://github.com/oyage-username/project",
     liveUrl: "https://example.com",
   }
+  
 ];

@@ -147,7 +147,7 @@ export default function HomePage() {
         <div className="mx-auto w-full max-w-6xl">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl text-sky-800">Featured Projects</h2>
           <div className="mt-6 grid gap-5 md:grid-cols-2">
-            {projectsData.slice(0, 3).map((project) => (
+            {projectsData.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
