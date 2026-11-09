@@ -28,19 +28,31 @@ export default function HomePage() {
   return (
     <>
       <section
-        id="home"
-        className="flex min-h-[calc(100vh-4rem)] scroll-mt-16 flex-col justify-center px-5 py-12 snap-start"
-      >
-        <div className="mx-auto w-full max-w-6xl">
-          <p className="text-sky-700 font-medium">{personalData.role}</p>
-          <h1 className="mt-3 text-5xl font-bold tracking-tight text-slate-900 md:text-6xl">
-            {personalData.name}
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg text-slate-600 md:text-xl">
-            {personalData.tagline}
-          </p>
-        </div>
-      </section>
+  id="home"
+  className="flex min-h-[calc(100vh-4rem)] scroll-mt-16 snap-start flex-col justify-center px-5 py-12"
+>
+  <div className="mx-auto w-full max-w-6xl">
+    <p className="font-bold text-sky-800">
+      Hello, I’m Dulaj Nihara
+    </p>
+
+    <h1 className="mt-3 text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
+        
+        <span className="bg-gradient-to-r from-sky-500 to-blue-700 bg-clip-text text-transparent">
+            Aspiring Cloud Engineer &
+        </span>
+        <br />
+        <span className="decoration-sky-400 decoration-wavy underline underline-offset-8  ">
+            Web Developer
+        </span>
+    </h1>
+
+    <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl">
+      Building robust web applications. Exploring scalable cloud architectures
+      and modern security practices.
+    </p>
+  </div>
+</section>
 
       <section
         id="about"
