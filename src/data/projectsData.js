@@ -5,7 +5,7 @@ import pcbDesign from './images/braille-printer/pcb-design.png';
 export const projectsData = [
     {
   id: "IOT",
-  title: "Automated Braille Printer ('Touch the Words')",
+  title: "Automated Braille Printer",
   category: "IoT / Embedded Systems",
   year: "2025",
   description: "An IoT-enabled Braille printing system converting PDF, voice, and manual text into embossed Braille. Features dual ESP32 controllers, custom PCB architecture, and a wireless web interface.",
@@ -24,8 +24,9 @@ export const projectsData = [
     category: "Web App",
     year: "2026",
     description: "Personal portfolio website highlighting creative web development.still continue...",
+    longdescription: "This portfolio website introduces my work, skills, and experience as an aspiring cloud engineer and web developer. I built it with React, Vite, and Tailwind CSS, focusing on a responsive layout that works across screen sizes. The site brings my projects together in one place and makes it easy to explore the technologies behind them. It also includes direct links to my live work and GitHub repositories, so visitors can learn more about each project and how it was built.",
     techStack: ["React", "Vite", "Tailwind CSS"],
-    githubUrl: "https://github.com/oyage-username/project",
+    githubUrl: "https://github.com/Dulaj111/my-portfolio",
     liveUrl: "https://example.com",
   }
   

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
   Code2,
@@ -13,6 +13,9 @@ import {
   GitFork,
   Box,
   Layers,
+  Phone,
+  Mail,
+  MessageCircle,
 } from 'lucide-react';
 import { personalData } from '../data/personalData';
 import { skillsData } from '../data/skillsData';
@@ -39,6 +42,9 @@ function getSkillIcon(skillName) {
 
 export default function HomePage() {
   const location = useLocation();
+  const [activeContact, setActiveContact] = useState(null);
+  const whatsappLink = `https://wa.me/${personalData.number.replace(/\D/g, '')}`;
+  const emailLink = `mailto:${personalData.email}?subject=${encodeURIComponent('Contact')}&body=${encodeURIComponent('I would like to contact you.')}`;
 
   useEffect(() => {
     document.documentElement.classList.add('snap-y');
@@ -90,7 +96,8 @@ export default function HomePage() {
         <div className="mx-auto w-full max-w-6xl">
           <h2 className="text-3xl font-bold tracking-tight text-sky-800 md:text-4xl">About me</h2>
           <p className="mt-4 max-w-2xl text-lg text-slate-600">
-            I build useful, responsive web applications.
+            Hi, I’m Dulaj Nihara, an aspiring cloud engineer and web developer with a strong interest in building useful, reliable web applications. I enjoy learning how cloud platforms and modern web technologies work together to create scalable digital experiences.
+I’m developing my skills through hands-on projects and by keeping up with new tools and practices in the industry. I’m especially interested in cloud infrastructure, application development, and security. My goal is to keep improving as an engineer and contribute to technology that is dependable, accessible, and useful to the people who rely on it.
           </p>
         </div>
       </section>
@@ -164,12 +171,68 @@ export default function HomePage() {
           <p className="mt-4 text-slate-600">
             Feel free to reach out for collaborations or questions:
           </p>
-          <a
-            href={`mailto:${personalData.email}`}
-            className="mt-3 inline-block text-lg font-semibold text-sky-700 hover:underline"
-          >
-            {personalData.email}
-          </a>
+          
+          <div className="mt-6 flex flex-wrap items-center gap-4">
+            <button
+              type="button"
+              onClick={() => setActiveContact((active) => active === 'phone' ? null : 'phone')}
+              aria-expanded={activeContact === 'phone'}
+              className="inline-flex items-center gap-3 rounded-2xl border-2 border-sky-700 bg-sky-700 pr-5 text-white transition hover:bg-sky-800"
+            >
+              <span className="flex h-14 w-14 items-center justify-center rounded-l-xl border-r-2 border-sky-700 bg-white text-sky-700">
+                <Phone className="h-6 w-6" />
+              </span>
+              <span className="font-semibold">Contact</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveContact((active) => active === 'email' ? null : 'email')}
+              aria-expanded={activeContact === 'email'}
+              className="inline-flex items-center gap-3 rounded-2xl border-2 border-sky-700 bg-sky-700 pr-5 text-white transition hover:bg-sky-800"
+            >
+              <span className="flex h-14 w-14 items-center justify-center rounded-l-xl border-r-2 border-sky-700 bg-white text-sky-700">
+                <Mail className="h-6 w-6" />
+              </span>
+              <span className="font-semibold">Gmail</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveContact((active) => active === 'linkedin' ? null : 'linkedin')}
+              aria-expanded={activeContact === 'linkedin'}
+              className="inline-flex items-center gap-3 rounded-2xl border-2 border-sky-700 bg-sky-700 pr-5 text-white transition hover:bg-sky-800"
+            >
+              <span className="flex h-14 w-14 items-center justify-center rounded-l-xl border-r-2 border-sky-700 bg-white text-sky-700">
+                <span className="font-bold text-lg">in</span>
+              </span>
+              <span className="font-semibold">LinkedIn</span>
+            </button>
+          </div>
+
+          {activeContact === 'phone' && (
+            <div className="mt-4">
+              <a href={whatsappLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-sky-700 px-4 py-3 text-sm font-semibold text-white transition hover:bg-sky-800">
+                <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                <span>WhatsApp</span>
+                <span className="font-normal">{personalData.number}</span>
+              </a>
+            </div>
+          )}
+
+          {activeContact === 'email' && (
+            <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-slate-200 bg-white p-4">
+              <span className="font-semibold text-slate-800">{personalData.email}</span>
+              <a href={emailLink} className="rounded-lg bg-sky-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-800">Go</a>
+            </div>
+          )}
+
+          {activeContact === 'linkedin' && (
+            <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-slate-200 bg-white p-4">
+              <span className="font-semibold text-slate-800">Collaborate with me on LinkedIn</span>
+              <a href={personalData.linkedin} target="_blank" rel="noreferrer" className="rounded-lg bg-sky-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-800">Go</a>
+            </div>
+          )}
+
+
         </div>
         <footer className="border-t border-slate-200 pt-6 text-center text-sm text-slate-500">
           <p>© {currentYear} {personalData.name}</p>
