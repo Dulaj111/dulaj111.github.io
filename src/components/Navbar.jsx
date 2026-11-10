@@ -23,6 +23,7 @@ export default function Navbar() {
           <Link to="/" className="font-bold text-slate-900">
             Dulaj Nihara
           </Link>
+          
         )}
 
         <nav className="flex items-center gap-5 text-sm font-medium">

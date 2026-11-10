@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function ProjectCard({ project }) {
   return (
-    <article className="rounded-2xl border border-slate-200 bg-white p-6">
+    <article className="rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white to-sky-50/70 p-6 transition-colors hover:border-sky-300">
       <p className="text-sm text-sky-700">
         {project.category} · {project.year}
       </p>

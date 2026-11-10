@@ -68,9 +68,14 @@ export default function HomePage() {
         className="flex min-h-[calc(100vh-4rem)] scroll-mt-16 snap-start flex-col justify-center px-5 py-12"
       >
         <div className="mx-auto w-full max-w-6xl">
-          <p className="font-bold text-sky-800">
+          <div className="font-bold text-sky-800">
             Hello, I’m Dulaj Nihara
-          </p>
+            <svg className="ml-2 inline size-4 animate-bounce align-middle" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="12" cy="12" r="7" className="fill-green-500" />
+            </svg>
+            
+          </div>
+          
 
           <h1 className="mt-3 text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
             <span className="bg-gradient-to-r from-sky-500 to-blue-700 bg-clip-text text-transparent">
@@ -91,11 +96,11 @@ export default function HomePage() {
 
       <section
         id="about"
-        className="flex min-h-[calc(100vh-4rem)] scroll-mt-16 flex-col justify-center px-5 py-12 snap-start"
+        className="flex min-h-[calc(100vh-4rem)] scroll-mt-16 flex-col justify-center bg-gradient-to-b from-transparent via-sky-50/70 to-transparent px-5 py-12 snap-start"
       >
         <div className="mx-auto w-full max-w-6xl">
-          <h2 className="text-3xl font-bold tracking-tight text-sky-800 md:text-4xl">About me</h2>
-          <p className="mt-4 max-w-2xl text-lg text-slate-600">
+          <h2 className="bg-gradient-to-r from-sky-700 to-blue-600 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-4xl">About me</h2>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
             Hi, I’m Dulaj Nihara, an aspiring cloud engineer and web developer with a strong interest in building useful, reliable web applications. I enjoy learning how cloud platforms and modern web technologies work together to create scalable digital experiences.
 I’m developing my skills through hands-on projects and by keeping up with new tools and practices in the industry. I’m especially interested in cloud infrastructure, application development, and security. My goal is to keep improving as an engineer and contribute to technology that is dependable, accessible, and useful to the people who rely on it.
           </p>
@@ -107,14 +112,14 @@ I’m developing my skills through hands-on projects and by keeping up with new 
         className="flex min-h-[calc(100vh-4rem)] scroll-mt-16 flex-col justify-center px-5 py-12 snap-start"
       >
         <div className="mx-auto w-full max-w-6xl">
-          <h2 className="text-3xl font-bold tracking-tight text-sky-800 md:text-4xl">Skills</h2>
+          <h2 className="bg-gradient-to-r from-sky-700 to-blue-600 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-4xl">Skills</h2>
 
           {/* All Skills Cards directly visible (no tab buttons) */}
           <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
             {skillsData.map((group) => (
               <div
                 key={group.category}
-                className="flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-xs transition hover:shadow-sm"
+                className="flex flex-col rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white to-sky-50/70 p-6 transition-colors hover:border-sky-300"
               >
                 <h3 className="text-xl font-bold text-slate-900">
                   {group.category}
@@ -131,7 +136,7 @@ I’m developing my skills through hands-on projects and by keeping up with new 
                     return (
                       <div
                         key={skill}
-                        className="flex items-center gap-3.5 rounded-2xl border border-slate-200/90 bg-white p-3.5 transition hover:border-sky-300 hover:shadow-2xs"
+                        className="flex items-center gap-3.5 rounded-xl border border-slate-200/80 bg-white/80 p-3.5 transition-colors hover:border-sky-300"
                       >
                         <IconComponent className="h-5 w-5 shrink-0 text-sky-600" />
                         <span className="font-semibold text-slate-800 text-sm">
@@ -149,10 +154,10 @@ I’m developing my skills through hands-on projects and by keeping up with new 
 
       <section
         id="projects"
-        className="flex min-h-[calc(100vh-4rem)] scroll-mt-16 flex-col justify-center px-5 py-12 snap-start"
+        className="flex min-h-[calc(100vh-4rem)] scroll-mt-16 flex-col justify-center bg-gradient-to-b from-transparent via-blue-50/60 to-transparent px-5 py-12 snap-start"
       >
         <div className="mx-auto w-full max-w-6xl">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl text-sky-800">Featured Projects</h2>
+          <h2 className="bg-gradient-to-r from-sky-700 to-blue-600 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-4xl">Featured Projects</h2>
           <div className="mt-6 grid gap-5 md:grid-cols-2">
             {projectsData.map((project) => (
               <ProjectCard key={project.id} project={project} />
@@ -163,11 +168,11 @@ I’m developing my skills through hands-on projects and by keeping up with new 
 
       <section
         id="contact"
-        className="flex min-h-[calc(100vh-4rem)] scroll-mt-16 flex-col justify-between px-5 pt-16 pb-8 snap-start"
+        className="flex min-h-[calc(100vh-4rem)] scroll-mt-16 flex-col justify-between bg-gradient-to-b from-transparent via-sky-50/70 to-transparent px-5 pt-16 pb-8 snap-start"
       >
         <div />
         <div className="mx-auto w-full max-w-6xl">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">Contact</h2>
+          <h2 className="bg-gradient-to-r from-sky-700 to-blue-600 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-4xl">Contact</h2>
           <p className="mt-4 text-slate-600">
             Feel free to reach out for collaborations or questions:
           </p>
@@ -177,7 +182,7 @@ I’m developing my skills through hands-on projects and by keeping up with new 
               type="button"
               onClick={() => setActiveContact((active) => active === 'phone' ? null : 'phone')}
               aria-expanded={activeContact === 'phone'}
-              className="inline-flex items-center gap-3 rounded-2xl border-2 border-sky-700 bg-sky-700 pr-5 text-white transition hover:bg-sky-800"
+              className="inline-flex items-center gap-3 rounded-xl border-2 border-sky-700 bg-sky-700 pr-5 text-white transition-colors hover:bg-sky-800"
             >
               <span className="flex h-14 w-14 items-center justify-center rounded-l-xl border-r-2 border-sky-700 bg-white text-sky-700">
                 <Phone className="h-6 w-6" />
@@ -188,7 +193,7 @@ I’m developing my skills through hands-on projects and by keeping up with new 
               type="button"
               onClick={() => setActiveContact((active) => active === 'email' ? null : 'email')}
               aria-expanded={activeContact === 'email'}
-              className="inline-flex items-center gap-3 rounded-2xl border-2 border-sky-700 bg-sky-700 pr-5 text-white transition hover:bg-sky-800"
+              className="inline-flex items-center gap-3 rounded-xl border-2 border-sky-700 bg-sky-700 pr-5 text-white transition-colors hover:bg-sky-800"
             >
               <span className="flex h-14 w-14 items-center justify-center rounded-l-xl border-r-2 border-sky-700 bg-white text-sky-700">
                 <Mail className="h-6 w-6" />
@@ -199,7 +204,7 @@ I’m developing my skills through hands-on projects and by keeping up with new 
               type="button"
               onClick={() => setActiveContact((active) => active === 'linkedin' ? null : 'linkedin')}
               aria-expanded={activeContact === 'linkedin'}
-              className="inline-flex items-center gap-3 rounded-2xl border-2 border-sky-700 bg-sky-700 pr-5 text-white transition hover:bg-sky-800"
+              className="inline-flex items-center gap-3 rounded-xl border-2 border-sky-700 bg-sky-700 pr-5 text-white transition-colors hover:bg-sky-800"
             >
               <span className="flex h-14 w-14 items-center justify-center rounded-l-xl border-r-2 border-sky-700 bg-white text-sky-700">
                 <span className="font-bold text-lg">in</span>
@@ -219,16 +224,22 @@ I’m developing my skills through hands-on projects and by keeping up with new 
           )}
 
           {activeContact === 'email' && (
-            <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-slate-200 bg-white p-4">
-              <span className="font-semibold text-slate-800">{personalData.email}</span>
-              <a href={emailLink} className="rounded-lg bg-sky-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-800">Go</a>
+            <div className="mt-4">
+              <div className="inline-flex flex-wrap items-center gap-2 rounded-xl bg-sky-700 px-4 py-3 text-sm font-semibold text-white">
+                <Mail className="h-5 w-5" aria-hidden="true" />
+                <span>{personalData.email}</span>
+                <a href={emailLink} className="rounded-lg bg-white/15 px-3 py-1.5 transition hover:bg-white/25">Go</a>
+              </div>
             </div>
           )}
 
           {activeContact === 'linkedin' && (
-            <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-slate-200 bg-white p-4">
-              <span className="font-semibold text-slate-800">Collaborate with me on LinkedIn</span>
-              <a href={personalData.linkedin} target="_blank" rel="noreferrer" className="rounded-lg bg-sky-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-800">Go</a>
+            <div className="mt-4">
+              <div className="inline-flex flex-wrap items-center gap-2 rounded-xl bg-sky-700 px-4 py-3 text-sm font-semibold text-white">
+                <span className="flex h-5 w-5 items-center justify-center rounded-sm bg-white text-xs font-bold text-sky-700" aria-hidden="true">in</span>
+                <span>Collaborate with me on LinkedIn</span>
+                <a href={personalData.linkedin} target="_blank" rel="noreferrer" className="rounded-lg bg-white/15 px-3 py-1.5 transition hover:bg-white/25">Go</a>
+              </div>
             </div>
           )}
 
@@ -237,7 +248,9 @@ I’m developing my skills through hands-on projects and by keeping up with new 
         <footer className="border-t border-slate-200 pt-6 text-center text-sm text-slate-500">
           <p>© {currentYear} {personalData.name}</p>
         </footer>
+        
       </section>
+      
     </>
   );
 }
